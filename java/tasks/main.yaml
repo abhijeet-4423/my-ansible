@@ -1,0 +1,2 @@
+- name: install java
+  action: yum pkg="{{pkg_name}}" state=present

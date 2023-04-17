@@ -1,0 +1,11 @@
+- hosts: dev
+  user: velocity
+  connection: ssh
+  gather_facts: yes
+  become: yes
+
+  roles:
+    - java
+    - docker
+    - git
+    - maven 

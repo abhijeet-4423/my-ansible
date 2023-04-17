@@ -1,0 +1,11 @@
+- name : docker
+  action : yum name="{{pkg_name}}" state=present
+- name : copy 
+  action : copy src=/home/velocity/ansible/docker-compose.sh dest=/home/velocity/ansible/ mode=777
+- name : docker-compose install
+  ansible.builtin.command :
+    chdir : /home/velocity/ansible
+    cmd : ./docker-compose.sh
+
+  notify:
+    - start docker
